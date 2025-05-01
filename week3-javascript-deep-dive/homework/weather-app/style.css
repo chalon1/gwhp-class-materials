@@ -73,5 +73,10 @@ button{
   justify-content: space-between;
   margin-top: 20px;
   font-size: 14px;
+  
+}
+.change{
+  color: black;
+  font-weight: bold;
 }
 
