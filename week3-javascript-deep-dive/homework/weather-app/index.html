@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Weather App</title>
-  </head>
-  <body>
-    <h1>Weather App</h1>
-    <input type="text" id="city" placeholder="Enter city name" />
-    <button id="getWeather">Get Weather</button>
-    <div id="weather"></div>
-    <script src="script.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Simple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="typing"></h1>
+    <div id="alone">
+        <div class="two">
+            <input type="text" id="me" placeholder="Enter city name" style="font-size: 20px; padding: 10px;">
+            <button id="us">🔍</button>
+        </div>
+    </div>
+        <div class="one">
+        <div class="three">
+            <img id="pic" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+            <h1 id="temp">22°C</h1>
+            <h2 id="city">City Name</h2>
+            <div class="four">
+                <p id="hum">50% Humidity</p>
+                <p id="wind">15 km/h Wind</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
 </html>

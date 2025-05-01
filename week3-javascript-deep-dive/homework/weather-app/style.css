@@ -1,16 +1,77 @@
 body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(skyBlue, darkGrey, white);
   font-family: Arial, sans-serif;
+  height: 100vh;
+ margin-left: 450px;
+}
+.typing {
+  font-size: 36px;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white; /* Simulating a typing cursor */
+}
+
+.one {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
   text-align: center;
-  margin-top: 50px;
+  width: 300px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-#weather {
-  margin: 20px auto;
-  max-width: 300px;
-  padding: 20px;
-  border: 1px solid #ddd;
-}
-input,
-button {
+
+#me {
   padding: 10px;
-  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: 300px;
+  height: 50px;
+
+
 }
+
+#us {
+  padding: 10px;
+  border: none;
+  background: white;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  
+}
+button{
+  width: 70px;
+  height: 70px;
+}
+#alone{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+#pic {
+  width: 80px;
+  height: 80px;
+}
+
+#temp {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+#city {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.four {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
