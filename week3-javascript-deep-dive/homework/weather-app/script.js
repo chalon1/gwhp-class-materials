@@ -1,0 +1,73 @@
+document.getElementById("us").addEventListener("click", getWeather);
+document.getElementById("me").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        getWeather();
+    }
+});
+
+async function getWeather() {
+    //async:"It waits for something (API) before it continues.
+    let city = document.getElementById("me").value;
+    if (city === "") {
+        alert("Type a city name!");
+        return null;
+    }
+     // Show "Loading..." while waiting
+     document.getElementById("temp").innerText = "Loading...";
+     document.getElementById("city").innerText = "";
+     document.getElementById("hum").innerText = "";
+     document.getElementById("wind").innerText = "";
+    try{
+        let api= "23bcbc5d396ffd8fb1640cb2ee7ae9e8";
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`);
+        let data = await response.json();
+        console.log(data);
+        if (data.cod === "404") {
+            alert("City not found!");
+            return;
+        }
+        catchme(data);
+    }catch(error){
+        console.log("This is an error try to fix this");
+        return null;
+    }
+}
+async function catchme(data){
+    if (!data) return;
+    document.getElementById("temp").innerText = data.main.temp;
+    document.getElementById("city").innerText = data.name;
+    document.getElementById("hum").innerText = data.main.humidity + " % humidity";
+    document.getElementById("wind").innerText = data.wind.speed + " km/h wind Speed";
+     // 7. Change background color based on weather
+     let weather = data.weather[0].main;
+     console.log("Weather is: ", weather);
+
+     if (weather === "Rain") {
+         document.body.style.background = "linear-gradient(135deg,rgb(76, 77, 77), #1c9ca5, white)";
+     } else if (weather === "Clear") {
+         document.body.style.background = "linear-gradient(135deg,rgb(255, 216, 117), #f8b500)";
+     } else if (weather === "Snow") {
+         document.body.style.background = "linear-gradient(135deg,rgb(207, 210, 212), #ffffff)";
+     }else if (weather === "Clouds") {
+        document.body.style.background = "linear-gradient(135deg,rgb(55, 55, 54) 0%,rgb(100, 100, 100) 100%)"
+     }else {
+         document.body.style.background = "linear-gradient(135deg, #4c8fa1, white, skyBlue)";
+     }
+}
+const text = "Welcome To The Weather App";
+        const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
+        let index = 0;
+        let colorIndex = 0;
+        const typingElement = document.querySelector(".typing");
+
+        function typeText() {
+            if (index < text.length) {
+                typingElement.innerHTML += `<span style="color: ${colors[colorIndex]}">${text[index]}</span>`;
+                index++;
+                colorIndex = (colorIndex + 1) % colors.length; // Rotate through colors
+                setTimeout(typeText, 200); // Adjust speed here
+            }
+        }
+
+        typeText(); // Start typing animation
+
