@@ -55,7 +55,7 @@ async function catchme(data){
      }
 }
 const text = "Welcome To The Weather App";
-        const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
+        const colors = ["red", "blue", "green", "black", "orange", "purple"];
         let index = 0;
         let colorIndex = 0;
         const typingElement = document.querySelector(".typing");
